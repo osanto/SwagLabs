@@ -21,6 +21,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Set environment variables
+        run: |
+          echo "USER_NAME=${{ secrets.USER_NAME }}" >> $GITHUB_ENV
+          echo "PASSWORD=${{ secrets.PASSWORD }}" >> $GITHUB_ENV
+
       - name: Run tests and generate reports
         run: |
             mkdir -p reports/failed_tests_screenshots
