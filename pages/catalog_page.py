@@ -24,7 +24,7 @@ class CatalogPage(BasePage):
     IMAGE_LINK: Tuple[By, str] = (By.XPATH, "//img[@alt='{}']")
     PRODUCT_NAME: Tuple[By, str] = (By.XPATH,
                                     "//div[@data-test='inventory-item'][{}]//div[@data-test='inventory-item-name']")
-    SORT_BUTTON = (By.CLASS_NAME, "product_sort_container!")
+    SORT_BUTTON = (By.CLASS_NAME, "product_sort_container")
 
     def __init__(self, driver: WebDriver) -> None:
         logger.info("Navigating to Catalog Page.")
